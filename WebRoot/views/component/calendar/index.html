@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../../../layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../../layuiadmin/style/admin.css" media="all">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="../../../layuiadmin/layui/layui.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="../../../../JS/moment.js"></script>
+    <script src="../../../../JS/vue.js"></script>
+</head>
+<body>
+<script src="//unpkg.com/vue/dist/vue.js"></script>
+<script src="//unpkg.com/element-ui@2.8.2/lib/index.js"></script>
+<script> </script>
+<div id="app">
+    <el-calendar>
+        <!-- 这里使用的是 2.5 slot 语法，对于新项目请使用 2.6 slot 语法-->
+        <template
+                slot="dateCell"
+                slot-scope="{date, data}">
+            <p :class="data.isSelected ? 'is-selected' : ''">
+                {{ data.day.split('-').slice(1).join('-') }} {{ data.isSelected ? '✔️' : ''}}
+            </p>
+        </template>
+    </el-calendar>
+    <style>
+        .is-selected {
+            color: #1989FA;
+        }
+    </style>
+</div>
+</body>
+<script>
+    function play() {
+        alert(1);
+    }
+
+
+    new Vue().$mount('#app')
+</script>
+</html>
